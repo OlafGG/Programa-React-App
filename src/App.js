@@ -3,7 +3,7 @@ import './App.css';
 import Greating from './components/pure/greating';
 import Fgreeating from './components/pure/fgreeating';
 import TaskListComponent from './components/container/task.list';
-import UserList from './components/container/user.list';
+
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
         {/*<Greating name="Uriel"></Greating>*/}
         {/*Componente de listado de tareas*/}
         <TaskListComponent></TaskListComponent>
-        <UserList></UserList>
       </header>
     </div>
   );
