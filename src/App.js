@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Greating from './components/pure/greating';
 import Fgreeating from './components/pure/fgreeating';
+import TaskListComponent from './components/container/task.list';
+import UserList from './components/container/user.list';
 
 function App() {
   return (
@@ -10,15 +12,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         {/*Componente metido pa*/ }
         {/*<Greating name="Uriel"></Greating>*/}
-        <Fgreeating name="Uriel"></Fgreeating>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/*Componente de listado de tareas*/}
+        <TaskListComponent></TaskListComponent>
+        <UserList></UserList>
       </header>
     </div>
   );
