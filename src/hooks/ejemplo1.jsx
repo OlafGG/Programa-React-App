@@ -15,7 +15,7 @@ const Ejemplo1 = () => {
 
     const personaInicial = {
         nombre : 'Uriel',
-        emil : 'baezauriel01@gmail.com'
+        email : 'baezauriel01@gmail.com'
     }
 
     /**
@@ -39,12 +39,34 @@ const Ejemplo1 = () => {
     }
 
     function actualizarPersona() {
-        
+        setPersona({
+            nombre: 'Pepe',
+            email: 'pepeproblemspica@gmail.com'
+        })
     }
 
     return (
         <div>
-            
+            <h1>
+                Ejemplo de use State: 
+            </h1>
+            <h2>
+                Contador: {contador}
+            </h2>
+            <h2>
+                El nombre de la persona: 
+            </h2>
+            <h3>
+                Nombre: {persona.nombre}
+            </h3>
+            <h4>
+                Email: {persona.email}
+            </h4>
+             {/**Botones sexys aros */}
+            <div>
+                <button onClick={incrementarContador}>incrementar Contador</button>
+                <button onClick={actualizarPersona}>Avtualizar Persona</button>
+            </div>
         </div>
     );
 }
