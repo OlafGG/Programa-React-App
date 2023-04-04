@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Greating from './components/pure/greating';
-import Fgreeating from './components/pure/fgreeating';
-import TaskListComponent from './components/container/task.list';
-import Ejemplo1 from './hooks/ejemplo1';
-import Ejemplo2 from './hooks/ejemplo2';
-import MiContextoConContexto from './hooks/ejemplo3';
-
+// import Greating from './components/pure/greating';
+// import Fgreeating from './components/pure/fgreeating';
+// import TaskListComponent from './components/container/task.list';
+// import Ejemplo1 from './hooks/ejemplo1';
+// import Ejemplo2 from './hooks/ejemplo2';
+// import MiContextoConContexto from './hooks/ejemplo3';
+import Ejemplo4 from './hooks/ejemplo4';
 
 function App() {
   return (
@@ -17,8 +17,9 @@ function App() {
         {/*<Greating name="Uriel"></Greating>*/}
         {/*Componente de listado de tareas*/}
         {/**Ejemplos de usos de hooks */}
-        <MiContextoConContexto></MiContextoConContexto>
-      </header>
+        {/**<MiContextoConContexto></MiContextoConContexto>*/}  
+        <Ejemplo4 nombre="Uriel Olaf Baeza Baeza"></Ejemplo4>    
+        </header>
     </div>
   );
 }
