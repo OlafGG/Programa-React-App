@@ -12,17 +12,17 @@ import GreetingStyled from './components/pure/greetingStyled';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" /> */}
         {/*Componente metido pa*/ }
         {/*<Greating name="Uriel"></Greating>*/}
         {/*Componente de listado de tareas*/}
         {/**Ejemplos de usos de hooks */}
         {/**<MiContextoConContexto></MiContextoConContexto>*/}  
         {/* <Ejemplo4 nombre="Uriel Olaf Baeza Baeza"></Ejemplo4>     */}
-        {/* <TaskListComponent></TaskListComponent> */}
-        <GreetingStyled name="Joaquin"></GreetingStyled>
-        </header>
+        <TaskListComponent></TaskListComponent>
+        {/* <GreetingStyled name="Joaquin"></GreetingStyled>
+        </header> */}
     </div>
   );
 }
