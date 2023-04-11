@@ -8,6 +8,7 @@ import TaskListComponent from './components/container/task.list';
 // import MiContextoConContexto from './hooks/ejemplo3';
 import Ejemplo4 from './hooks/ejemplo4';
 import GreetingStyled from './components/pure/greetingStyled';
+import Father from './components/container/father';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         <TaskListComponent></TaskListComponent>
         {/* <GreetingStyled name="Joaquin"></GreetingStyled>
         </header> */}
+
+        {/**Gestion de evenetos */}
+        {/* <Father></Father> */}
     </div>
   );
 }

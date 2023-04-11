@@ -25,8 +25,29 @@ const TaskListComponent = () => {
     
     
 
-    const changeCompleted = (id) => {
-        console.log('TODO: Cambiar estado')
+    function completeTask(task){
+        console.log('Complete this Task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks[index].completed = !tempTasks[index].completed;
+        //we update the state of the component with the new list of tasks and it will update 
+        //the iteration of the tasks in order to show the tasks update
+        setTasks(tempTasks);
+    }   
+
+    function deleteTask(task){
+        console.log('Delete this Task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.splice(index, 1);
+        setTasks(tempTasks);
+    }
+
+    function addTask (task){
+        console.log('Delete this Task', task);
+        const tempTasks = [...tasks];
+        tempTasks.push(task);
+        setTasks(tempTasks);
     }
 
     return (
@@ -52,14 +73,21 @@ const TaskListComponent = () => {
                             <tbody>
                                 {tasks.map((task, index) => {
                                     return(
-                                        <TaskComponent key={index} task={task}></TaskComponent>
+                                        <TaskComponent 
+                                            key={index} 
+                                            task={task} 
+                                            complete={completeTask}
+                                            remove = {deleteTask}> 
+                                        </TaskComponent>
                                     )
                                 })}
                                 
                             </tbody>
                         </table>
                     </div>
-                    <TaskForm></TaskForm>
+                    <TaskForm
+                    add={addTask}
+                    ></TaskForm>
                 </div>
             </div>
         </div>
