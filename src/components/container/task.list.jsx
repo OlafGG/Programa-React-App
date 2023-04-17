@@ -17,7 +17,10 @@ const TaskListComponent = () => {
 
     useEffect(() => {
         console.log('Task state has been modified');
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+        
         return () => {
             console.log('Tasklist component is going to unmount...')
         };
@@ -50,18 +53,9 @@ const TaskListComponent = () => {
         setTasks(tempTasks);
     }
 
-    return (
-        <div>
-            <div className='col-12'>
-                <div className='card'>
-                    <div className='card-header p-3'>
-                        <h5>
-                            Your Task: 
-                        </h5>
-                    </div>
-                    
-                    <div className='card-body' data-mdb-perfect-scrollbar='true' style={ {position: 'relative', height: '400px'} }>
-                        <table>
+    const Table = () => {
+        return (
+            <table>
                             <thead>
                                 <tr>
                                     <th scope='col'>Title</th>
@@ -84,9 +78,44 @@ const TaskListComponent = () => {
                                 
                             </tbody>
                         </table>
+        )
+    }
+    let tasksTable = <Table></Table>;
+
+    if(tasks.length > 0){
+        tasksTable = <Table></Table>
+    }else{
+        tasksTable =  
+        (
+        <div>
+            <h3>There are no tasks to show</h3>
+            <h4>Please, create one</h4>
+        </div>
+        )
+    }
+    const loadingStyle = {
+        color: 'gray',
+        fontSize: '30px',
+        fontWeight: 'bold'
+    }
+
+    return (
+        <div>
+            <div className='col-12'>
+                <div className='card'>
+                    <div className='card-header p-3'>
+                        <h5>
+                            Your Task: 
+                        </h5>
+                    </div>
+                    
+                    <div className='card-body' data-mdb-perfect-scrollbar='true' style={ {position: 'relative', height: '400px'} }>
+                        {//TODO: Add Loading Spinner
+                        }
+                        {loading ? <p style={loadingStyle}>Loading Task...</p> : tasksTable}
                     </div>
                     <TaskForm
-                    add={addTask}
+                    add={addTask} nTasks={tasks.length}
                     ></TaskForm>
                 </div>
             </div>

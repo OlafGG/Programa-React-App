@@ -2,7 +2,7 @@
 import './App.css';
 // import Greating from './components/pure/greating';
 // import Fgreeating from './components/pure/fgreeating';
-// import TaskListComponent from './components/container/task.list';
+import TaskListComponent from './components/container/task.list';
 // import Ejemplo1 from './hooks/ejemplo1';
 // import Ejemplo2 from './hooks/ejemplo2';
 // import MiContextoConContexto from './hooks/ejemplo3';
@@ -22,7 +22,7 @@ function App() {
         {/**Ejemplos de usos de hooks */}
         {/**<MiContextoConContexto></MiContextoConContexto>*/}  
         {/* <Ejemplo4 nombre="Uriel Olaf Baeza Baeza"></Ejemplo4>     */}
-        {/* <TaskListComponent></TaskListComponent> */}
+        <TaskListComponent></TaskListComponent>
         {/* <GreetingStyled name="Joaquin"></GreetingStyled>
         </header> */}
 
@@ -31,7 +31,7 @@ function App() {
 
         {/**Ejemplos renderizado condicional */}
 
-        <OptionalRender></OptionalRender>
+        
     </div>
   );
 }
