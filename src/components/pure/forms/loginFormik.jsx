@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const loginSchema = Yup.object().shape(
@@ -25,22 +25,18 @@ const LoginFormik = () => {
                 initialValues={ initialCredentials }
                 validationSchema={loginSchema}
                 onSubmit={async (values) => {
-                await new Promise((r) => setTimeout(r, 500));
+                await new Promise((r) => setTimeout(r, 1000));
                 alert(JSON.stringify(values, null, 2));
+                localStorage.setItem('credentials', values)
                 }}
             >
-                { props => {
-                    const {
-                        values,
+                {({ values,
                         touched,
                         errors,
                         isSubmitting,
                         handleChange,
-                        handleBlur
-                    } = props;
-
-                    return (
-                        <Form>
+                        handleBlur }) => (
+                            <Form>
                             <label htmlFor="email">Email</label>
                             <Field id="email" name="email" placeholder="example@email.com" />
 
@@ -48,8 +44,8 @@ const LoginFormik = () => {
                             {
                                 errors.email && touched.email && 
                                 (
-                                    <div className='error'>
-                                        <p>{errors.email}</p>
+                                    <div>
+                                        <ErrorMessage name='email'></ErrorMessage>
                                     </div>
                                 )
                             }
@@ -72,9 +68,10 @@ const LoginFormik = () => {
                             }
 
                             <button type="submit">Login</button>
+                            {isSubmitting ? <p>Login your credentials ...</p> : null}
                         </Form>
-                    )
-                }}
+                )}
+                
 
                 
             </Formik>

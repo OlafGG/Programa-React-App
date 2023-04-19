@@ -4,6 +4,7 @@ import './App.css';
 // import Fgreeating from './components/pure/fgreeating';
 import TaskListComponent from './components/container/task.list';
 import LoginFormik from './components/pure/forms/loginFormik';
+import RegisterFormik from './components/pure/forms/registerFormik';
 // import Ejemplo1 from './hooks/ejemplo1';
 // import Ejemplo2 from './hooks/ejemplo2';
 // import MiContextoConContexto from './hooks/ejemplo3';
@@ -32,8 +33,8 @@ function App() {
 
         {/**Ejemplos renderizado condicional */}
         {/**Ejemplos de formik y Yup */}
-        <LoginFormik></LoginFormik>
-        
+        {/***<LoginFormik></LoginFormik>*/}
+        <RegisterFormik></RegisterFormik>
     </div>
   );
 }
