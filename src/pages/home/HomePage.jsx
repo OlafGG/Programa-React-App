@@ -1,14 +1,30 @@
 import React from 'react';
 
+import { useLocation, useHistory } from 'react-router-dom';
+
+    
+
 const HomePage = () => {
+
+    const location = useLocation();
+
+    console.log('we are en Route: ', location.pathname);
+
+    const history = useHistory();
+
+    const navigate = (path) => {
+        history.push(path);
+    }
+
+
     return (
         <div>
             <h1>
                 Home Page
             </h1>
-            <h2>
-                Dashboard
-            </h2>
+            <button onClick={() => {navigate('/profile')}}>
+                Go to Profile
+            </button>
         </div>
     );
 }

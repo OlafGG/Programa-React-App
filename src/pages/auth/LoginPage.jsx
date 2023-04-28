@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginFormik from '../../components/pure/forms/loginFormik';
 
 const LoginPage = () => {
     return (
@@ -6,6 +7,7 @@ const LoginPage = () => {
             <h1>
                 Login Page
             </h1>
+            <LoginFormik></LoginFormik>
         </div>
     );
 }
