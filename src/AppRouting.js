@@ -1,4 +1,4 @@
-import { Link, Switch, Route, BrowserRouter as RouterOne, Redirect } from 'react-router-dom';
+import { Link, Route, BrowserRouter as RouterOne, Navigate, Routes } from 'react-router-dom';
 import {useEffect} from 'react';
 
 import HomePage from './pages/home/HomePage';
@@ -34,14 +34,14 @@ import LoginPage from './pages/auth/LoginPage';
         </aside>
 
         <main>
-          <Switch>
-            <Route exact path='/' Component={HomePage}></Route>
-            <Route path='/login' Component={LoginPage}>
+          <Routes>
+            <Route exact path='/' Component={<HomePage/>}></Route>
+            <Route path='/login' Component={<LoginPage/>}>
               {
                 logged ? 
                 () => {
-                  alert('You are logged in. Redirecting to home...')
-                  return (<Redirect to='/' />) 
+                  alert('You are logged in. Navigating to home...')
+                  return (<Navigate to='/' />) 
                 }
                 : 
                 () => {
@@ -49,22 +49,22 @@ import LoginPage from './pages/auth/LoginPage';
                 }
               }
             </Route>
-            <Route path='/{about|faqs}' Component={AboutPages}></Route>
-            <Route path='/profile' Component={ProfilePage}>
+            <Route path='/{about|faqs}' Component={<AboutPages/>}></Route>
+            <Route path='/profile' Component={<ProfilePage/>}>
               {
                 logged ? 
                 <ProfilePage /> 
                 :
                 () => {
-                  alert('You must be logged in. Redirecting to login ...')
-                  return (<Redirect to='/login' />) 
+                  alert('You must be logged in. Navigating to login ...')
+                  return (<Navigate to='/login' />) 
                 }
               }
             </Route>
-            <Route path='/tasks' Component={TasksPage}></Route>
-            <Route path='/task/:id' Component={TasksDetailPage}></Route>
-            <Route Component={NotFoundPage}></Route>
-          </Switch>
+            <Route path='/tasks' Component={<TasksPage/>}></Route>
+            <Route path='/task/:id' Component={<TasksDetailPage/>}></Route>
+            <Route Component={<NotFoundPage/>}></Route>
+          </Routes>
         </main>
       </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const AboutPages = () => {
 
@@ -8,7 +8,7 @@ const AboutPages = () => {
 
     console.log('we are en Route: ', location.pathname);
 
-    const history = useHistory();
+    const history = useNavigate();
 
     const navigate = (path) => {
         history.push(path);

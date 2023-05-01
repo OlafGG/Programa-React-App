@@ -1,11 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const ProfilePage = ({user}) => {
     
     
 
-    const goBackHistory = useHistory();
+    const goBackHistory = useNavigate();
 
     const navigteTo = (path) => {
         goBackHistory.push(path);

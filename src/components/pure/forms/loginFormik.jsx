@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -19,7 +19,7 @@ const LoginFormik = () => {
         password: ''
     }
 
-    const history = useHistory();
+    const history = useNavigate();
 
 
 
