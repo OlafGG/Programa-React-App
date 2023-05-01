@@ -11,15 +11,15 @@ const AboutPages = () => {
     const history = useNavigate();
 
     const navigate = (path) => {
-        history.push(path);
+        history(path);
     }
 
     const goBackHist = () => {
-        history.goBack();
+        history(-1);
     }
 
     const goForward = () => {
-        history.goForward();
+        history(1);
     }
 
 

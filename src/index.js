@@ -5,15 +5,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 //! Your css need to be below bootstrap, the reson is dont be in front of your css
 import './index.css';
-//import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppRouting from './AppRouting';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/*<App />*/}
-    <AppRouting/>
+  <AppRouting/>
   </React.StrictMode>
 );
 

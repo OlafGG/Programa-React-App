@@ -5,9 +5,6 @@ const NotFoundPage = () => {
 
     const history = useNavigate();
 
-    const navigateTo = (path) => {
-        history.push(path);
-    }
 
     return (
         <div>
@@ -15,7 +12,7 @@ const NotFoundPage = () => {
                 404 - Page Not Found
             </h1>
 
-            <button onClick={() => navigateTo('/')
+            <button onClick={() => history('/')
             }>Go back to home</button>
         </div>
     );
